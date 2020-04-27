@@ -16,6 +16,7 @@ cleanup:
     helm.sh/hook-delete-policy: hook-succeeded
 
 preview:
+  nameOverride: test-service
   image:
     repository:
     tag:
