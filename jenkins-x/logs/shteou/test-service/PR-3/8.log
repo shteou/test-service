@@ -1,0 +1,45 @@
+
+Showing logs for build [32mshteou-test-service-pr-3-pr-bui-6bpp8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-7clvj[0m
+{"level":"info","ts":1587998081.8652992,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1587998081.8661575,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mshteou-test-service-pr-3-pr-bui-6bpp8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-qbdsx[0m
+{"level":"info","ts":1587998082.414318,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1587998082.4159465,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mshteou-test-service-pr-3-pr-bui-6bpp8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mshteou-test-service-pr-3-pr-bui-6bpp8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-shteou-test-service-pr-3-pr-bui-6bpp8-gfls4[0m
+{"level":"info","ts":1587998089.632875,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1587998091.2026362,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/******/test-service.git @ master in path /workspace/source"}
+
+Showing logs for build [32mshteou-test-service-pr-3-pr-bui-6bpp8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:9df1fec6f0b847d1cf832f9fd4f980ff9407f7ba,3:64ee09e5393731abc59d29c7cafd80297bf3d232
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 64ee09e5393731abc59d29c7cafd80297bf3d232: 9df1fec6f0b847d1cf832f9fd4f980ff9407f7ba:
+DEBUG: ran git fetch --unshallow origin 64ee09e5393731abc59d29c7cafd80297bf3d232: 9df1fec6f0b847d1cf832f9fd4f980ff9407f7ba: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 9df1fec6f0b847d1cf832f9fd4f980ff9407f7ba
+DEBUG: ran git reset --hard 9df1fec6f0b847d1cf832f9fd4f980ff9407f7ba in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 64ee09e5393731abc59d29c7cafd80297bf3d232
+DEBUG: ran git merge 64ee09e5393731abc59d29c7cafd80297bf3d232 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 9df1fec6f0b847d1cf832f9fd4f980ff9407f7ba..HEAD
+Merged SHA 64ee09e5393731abc59d29c7cafd80297bf3d232 with commit message '!' into base branch master
+Merged SHA 7035d58d8ee6f776ff48d068e5f4a0e5d898be5a with commit message '.' into base branch master
+Merged SHA 7244f821e56883a67c6437f061a8635e52f5aef8 with commit message 'Changeo' into base branch master
+Merged SHA e273f3d58bf10ccbf5bfe2f3c2589304802e6fcc with commit message 'push!' into base branch master
+Merged SHA 68be5eec8318dd9911120044fd3e56c998102f3f with commit message '..' into base branch master
+Merged SHA 9fae336cd70a64b2d891dde8e0c4b4bd1e3ba5ee with commit message '.' into base branch master
+Merged SHA e09921848949d690cb5bd26dde6768d0b018744e with commit message 'Make a change' into base branch master
+
+Showing logs for build [32mshteou-test-service-pr-3-pr-bui-6bpp8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-linux[0m
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/test-service main.go
+
+Showing logs for build [32mshteou-test-service-pr-3-pr-bui-6bpp8-8[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+error checking push permissions -- make sure you entered the correct tag name, and that you are authenticated correctly, and try again: checking push permission for "rg.fr-par.scw.cloud/foobar/******/test-service:0.0.0-SNAPSHOT-PR-3-8": creating push check transport for rg.fr-par.scw.cloud failed: unsupported status code 401; body: Unauthorized request
+
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
